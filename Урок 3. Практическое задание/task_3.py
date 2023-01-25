@@ -22,3 +22,16 @@
 р
 а
 """
+
+import hashlib
+
+def substring_hash(string):
+    res = set()
+    substring = set()
+    for i in range(len(string)):
+        for j in range(len(string) - i):
+            res.add(hashlib.sha256(string[i:i + j]).hexdigest())
+            substring.add(string[i:i + j])
+    return res, substring
+
+print(substring_hash(input('input string: ').encode()))
