@@ -12,6 +12,7 @@
 ОБЯЗАТЕЛЬНО! Добавьте аналитику: что вы сделали и какой это принесло эффект
 """
 
+import timeit
 
 def func_1(nums):
     new_arr = []
@@ -19,3 +20,4 @@ def func_1(nums):
         if nums[i] % 2 == 0:
             new_arr.append(i)
     return new_arr
+

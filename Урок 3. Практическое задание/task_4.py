@@ -35,7 +35,7 @@ class url_lib():
         else:
             abs_url = urljoin('http://', '//' + url)
         if abs_url in self.library.keys():
-            return print('this url is already in a url library!')
+            return print(self.library[abs_url])
         else:
             self.library[abs_url] = hashlib.sha256(salt.encode() + abs_url.encode()).hexdigest()
             return print('added new url to the library')
