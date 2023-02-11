@@ -16,3 +16,19 @@
 
 В конце сделайте аналитику какой трех из способов оказался эффективнее
 """
+
+import random
+from statistics import median
+
+
+m = 10
+RANDOM_LIST = [random.randint(0, 1000) for _ in range(2 * m + 1)]
+print(RANDOM_LIST)
+print(median(RANDOM_LIST))
+
+def le_median(RANDOM_LIST):
+    return median(RANDOM_LIST)
+
+if __name__ == '__main__':
+    import timeit
+    print(timeit.timeit("le_median", setup="from __main__ import le_median"))
